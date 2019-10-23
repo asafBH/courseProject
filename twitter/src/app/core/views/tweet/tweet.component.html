@@ -1,0 +1,6 @@
+<div class="container" *ngIf="tweetData$ | async as tweet">
+  <app-tweet-card [tweetDetails]="tweet"></app-tweet-card>
+
+  <h3>Replys</h3>
+  <app-tweet-card *ngFor="let reply of tweet.reply" [tweetDetails]="reply"></app-tweet-card>
+</div>

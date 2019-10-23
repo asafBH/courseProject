@@ -1,0 +1,23 @@
+<mat-card class="mat-card">
+  <mat-card-header>
+    <img *ngIf="!tweetDetails.posterPicture" mat-card-avatar class="avatar-image"
+      src='https://www.w3schools.com/w3images/avatar2.png' (click)="userTweet()" class="mouse-pointer">
+    <img *ngIf="tweetDetails.posterPicture" mat-card-avatar class="avatar-image" src='{{tweetDetails.posterPicture}}'
+      (click)="userTweet()" class="mouse-pointer">
+    <mat-card-title>{{tweetDetails.posterUser}}-{{tweetDetails.createdAt | date:'shortDate'}}</mat-card-title>
+    <mat-card-subtitle><a [routerLink]="['/tweet/', tweetDetails._id]">Replys</a></mat-card-subtitle>
+    <mat-card-subtitle>{{tweetDetails.content}}</mat-card-subtitle>
+  </mat-card-header>
+  <button *ngIf="loggedIn" mat-icon-button (click)="tweetReply()">
+    <mat-icon>reply</mat-icon>
+  </button>
+  <button *ngIf="tweetDetails.isTweetOwner" (click)="tweetDelete()" mat-icon-button>
+    <mat-icon>delete</mat-icon>
+  </button>
+  <button *ngIf="tweetDetails.isStaredByMe" (click)="unstar()" mat-icon-button>
+    <mat-icon>star</mat-icon>
+  </button>
+  <button *ngIf="!tweetDetails.isStaredByMe" (click)="star()" [disabled]="!loggedIn" mat-icon-button>
+    <mat-icon>star_border</mat-icon>
+  </button>
+</mat-card>

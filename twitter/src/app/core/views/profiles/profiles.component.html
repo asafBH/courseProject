@@ -1,0 +1,13 @@
+<mat-card class="example-card">
+        <mat-card-header *ngIf="profileData$ | async as user ">
+          <img mat-card-avatar class="avatar-image" src='https://www.w3schools.com/w3images/avatar2.png'>
+          <mat-card-title>user name: {{user.userDetails.username}}</mat-card-title>
+          <mat-card-subtitle>registration date: {{user.userDetails.lastLoginDate | date:'shortDate'}}</mat-card-subtitle>
+          <mat-card-subtitle>last login: {{user.userDetails.lastLoginDate | date:'short'}}</mat-card-subtitle>
+          
+        </mat-card-header>
+
+      </mat-card>
+    
+
+<app-tweet-card *ngFor="let tweet of state.state$ | async" [tweetDetails]="tweet"></app-tweet-card>

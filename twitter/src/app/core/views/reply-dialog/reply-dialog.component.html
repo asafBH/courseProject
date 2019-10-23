@@ -1,0 +1,14 @@
+<h4 mat-dialog-title>Reply tweet</h4>
+<form class="repForm" #replyForm="ngForm">
+  <div mat-dialog-content>
+    <mat-form-field class="tweet-full-width">
+      <textarea matInput id="message" name="message" required maxlength="240" matTextareaAutosize
+        [(ngModel)]="replyTweet" placeholder="Reply tweet here" #message="ngModel"></textarea>
+      <mat-hint align="end">{{replyTweet.length}} / 240</mat-hint>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button (click)="onReplyClick()" cdkFocusInitial [disabled]="!replyForm.form.valid">Reply</button>
+  </div>
+</form>

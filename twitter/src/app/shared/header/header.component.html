@@ -1,0 +1,32 @@
+<header>
+  <nav>
+    <div fxFlex fxLayout="row" fxLayoutAlign="center center">
+      <div fxFlex>
+      
+        <button mat-button routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+          class="mouse-pointer">
+          {{(localization.menuItem$ | async)?.Home | lang:localization.currentLang}}</button>
+        <button *ngIf="!userState.state" mat-button routerLink="/login" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+          class="mouse-pointer">
+          {{(localization.menuItem$ | async)?.LogIn | lang:localization.currentLang}}</button>
+        <button *ngIf="!userState.state" mat-button routerLink="/register" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+          class="mouse-pointer">
+          {{(localization.menuItem$ | async)?.Register | lang:localization.currentLang}}</button>
+        <button *ngIf="userState.state" mat-button routerLink="profile/{{userState.state.id}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+          class="mouse-pointer">
+          {{(localization.menuItem$ | async)?.Profile | lang:localization.currentLang}}</button>
+        <button *ngIf="userState.state" mat-button (click)="userState.logout()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+          class="mouse-pointer">
+          {{(localization.menuItem$ | async)?.LogOut | lang:localization.currentLang}}</button>
+        <button *ngIf="userState.state" mat-button disabled>Hello, {{userState.state.username}}</button>
+      </div>
+
+
+      <mat-form-field class="right-space">
+        <mat-select (selectionChange)="localization.changeLang($event)" [value]="localization.currentLang">
+          <mat-option *ngFor="let lang of localization.availableLang" value={{lang}}> {{lang}} </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </nav>
+</header>

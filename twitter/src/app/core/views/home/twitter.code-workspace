@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "/Users/asafbenhroin/Desktop/twitter-app/twitter-node"
+		},
+		{
+			"path": "/Users/asafbenhroin/Desktop/twitter-app/twitter"
+		}
+	],
+	"settings": {
+		"typescript.referencesCodeLens.enabled": true,
+		"liveServer.settings.multiRootWorkspaceName": "twitter"
+	}
+}

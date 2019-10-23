@@ -1,0 +1,27 @@
+{
+    "Home": {
+        "en": "Home",
+        "es": "Casa",
+        "fr": "Maison"
+    },
+    "LogIn": {
+        "en": "Log In",
+        "es": "Iniciar sesión",
+        "fr": "Sidentifier"
+    },
+    "Register": {
+        "en": "Register",
+        "es": "Registro",
+        "fr": "S'inscrire"
+    },
+    "LogOut": {
+        "en": "Log Out",
+        "es": "Cerrar sesión",
+        "fr": "Connectez - Out"
+    },
+    "Profile": {
+        "en": "Profile",
+        "es": "Perfil",
+        "fr": "Profil"
+    }
+}

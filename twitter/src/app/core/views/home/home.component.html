@@ -1,0 +1,17 @@
+<div class="container">
+  <mat-card class="tweet-form" *ngIf="userState.state$ | async">
+    <form #messageForm="ngForm">
+      <mat-form-field class="tweet-full-width">
+        <textarea matInput id="message" name="message" required maxlength="240" matTextareaAutosize
+          [(ngModel)]="messageText" #message="ngModel"></textarea>
+        <mat-hint align="end">{{messageText.length}} / 240</mat-hint>
+      </mat-form-field>
+      <mat-card-actions>
+        <button mat-button (click)="postTweet()" [disabled]="!messageForm.form.valid">POST</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+  <app-tweet-card *ngFor="let tweet of state.state$ | async" (tweetAction)="tweetActions($event)"
+    [loggedIn]="userState.state$ | async" [tweetDetails]="tweet" (userProfile)="userProfileToShow($event)">
+  </app-tweet-card>
+</div>

@@ -1,0 +1,91 @@
+:host(app-header) {
+  padding-top: 0;
+  padding-bottom: 5em;
+  display: grid;
+
+
+  header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 8px 16px;
+      color: white;
+      height: 4em;
+      background: #0071C5;
+      box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+
+      .progress-bar {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        height: 5px;
+      }
+
+      .image-icon {
+        width: 60px;
+        height: 42px;
+      }
+
+      img {
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  :host(app-nav) {
+    padding-top: 0;
+    padding-bottom: 1em;
+
+    header {
+      position: relative;
+
+      nav {
+        height: 7em;
+        display: flex;
+        padding: 1em 2em 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  :host(app-nav) {
+    padding-bottom: 0;
+
+    header {
+      nav {
+        app-search-bar {
+          width: 75%;
+        }
+      }
+    }
+  }
+}
+
+.text-left {
+  text-align: left;
+  font-size: 20px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+mat-form-field {
+  width: 40px;
+}
+
+.right-space {
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+}
